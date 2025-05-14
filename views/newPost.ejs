@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Movieboxd | <%= title %></title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/newpost.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include("./partials/navbar") %>
+    <main>
+        <form action="" method="POST">
+            <div class="h2-line"><h2>Write a new</h2><h2 class="secondary">post</h2></div>
+            <div class="form-item">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" required placeholder="at least 6 characters">
+            </div>
+            <div class="form-item">
+                <textarea name="content" id="content" rows="4" required>Write something about a movie...</textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </main>
+    <%- include("./partials/footer") %>
+</body>
+</html>

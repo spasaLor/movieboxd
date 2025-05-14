@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Movieboxd | Registration</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/newpost.css">
+    <link rel="stylesheet" href="/styles/landing.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <p>Movieboxd</p>
+    </nav>
+    <main>
+        <form action="" method="POST">
+            <h2>Register</h2>
+            <% if (locals.errors){ %>
+                <%- include("partials/errors") %>
+            <%} %>
+            <div class="form-item">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="<% if (locals.values){%> <%= locals.values.name %> <% } %>" required>
+            </div>
+            <div class="form-item">
+                <label for="surname">Surname</label>
+                <input type="text" name="surname" id="surname" value="<% if (locals.values){%> <%= locals.values.surname %> <% } %>" required>
+            </div>
+            <div class="form-item">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div class="form-item"><label for="password">Password</label><input type="password" name="password" id="password" required></div>
+            <div class="form-item"><label for="confirm">Confirm Password</label><input type="password" name="confirm" id="confirm" required></div>
+            <div class="last-row">
+                <div>
+                    <label for="admin">Is admin</label>
+                    <input type="checkbox" name="admin" id="admin">
+                </div>                
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </main>
+    <%- include("./partials/footer") %>
+</body>
+</html>

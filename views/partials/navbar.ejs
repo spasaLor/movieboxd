@@ -1,0 +1,11 @@
+<nav>
+    <div class="nav-container">
+        <% if (locals.currentUser.membership_status !== 'member'){%>
+        <a href="/member">Become a member</a>
+    <%} else{%>
+        <a href="/new">New Post</a>
+    <%}%>
+        <a href="/home" id="home">Movieboxd</a>
+        <a href="/logout">Logout</a>
+    </div>
+</nav>

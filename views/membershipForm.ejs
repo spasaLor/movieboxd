@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Movieboxd | <%= title %></title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/newpost.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include("./partials/navbar") %>
+    <main>
+        <form action="" method="POST">
+            <div class="h2-line">
+                <h2>Become a</h2> <h2 class="secondary">member</h2>
+            </div>
+            <% if (locals.errors){%>
+                  <%- include("./partials/errors") %>
+           <% } %>
+           <div class="form-item">
+                 <label for="code">Insert the <strong>super</strong> secret code</label>
+                <input type="number" name="code" id="code">
+           </div>
+            <button type="submit">Enter</button>
+        </form>
+    </main>
+    <%- include("./partials/footer") %>
+</body>
+</html>

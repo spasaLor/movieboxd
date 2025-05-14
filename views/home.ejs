@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Movieboxd | <%= title %></title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+    <script src="/scripts/deleteButton.js" defer></script>
+</head>
+<body>
+    <%- include("./partials/navbar") %>
+    <main>
+        <h2>Latest Posts</h2>
+        <div class="posts-container">
+            <% posts.forEach(post=>{%>
+                <div class="post">
+                    <div class="text">
+                        <div class="top">
+                            <h3><%= post.title %></h3>
+                            <% if (locals.currentUser.is_admin){%>
+                                <p class="delete" data-post="<%= post.id %>">X</p>
+                            <%  } %>
+                        </div>
+                        
+                        <p id="published">Published by <% if(locals.currentUser.membership_status === 'member') {%>
+                             <span id="author"><%= post.author %></span> <%= post.timestamp %>
+                            <%}else {%>
+                             anonymous 
+                             <%}%> 
+                        </p> 
+                        <p id="content"><%= post.content %></p>
+                    </div>
+                </div>
+            <%}) %>
+        </div>        
+    </main>
+    <%- include("./partials/footer") %>
+</body>
+</html>
